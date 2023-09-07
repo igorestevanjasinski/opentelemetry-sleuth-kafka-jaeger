@@ -1,7 +1,7 @@
 services:
 
   customer-service-bff:
-    image: customer-service-bff:0.0.1-SNAPSHOT
+    image: igorestevanjasinski/customer-service-bff:0.0.1-SNAPSHOT
     ports:
       - "8080:8080"
     depends_on:
@@ -9,7 +9,7 @@ services:
       - kafka
 
   customer-service:
-    image: customer-service:0.0.1-SNAPSHOT
+    image: igorestevanjasinski/customer-service:0.0.1-SNAPSHOT
     ports:
       - "8081:8081"
     depends_on:
@@ -23,7 +23,7 @@ services:
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
 
   order-service:
-    image: order-service:0.0.1-SNAPSHOT
+    image: igorestevanjasinski/order-service:0.0.1-SNAPSHOT
     ports:
       - "8082:8082"
     depends_on:
@@ -39,7 +39,7 @@ services:
   postgres-customer:
     image: postgres
     ports:
-      - "5432:5432"
+      - "5430:5432"
     environment:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_USER=postgres
